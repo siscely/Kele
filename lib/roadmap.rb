@@ -1,3 +1,6 @@
+require 'httparty'
+require 'json'
+
 module RoadMap
     
     def get_roadmap
