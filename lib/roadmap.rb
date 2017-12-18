@@ -2,6 +2,7 @@ require 'httparty'
 require 'json'
 
 module RoadMap
+    include HTTParty
     
     def get_roadmap
         response = self.class.get("#{@base_uri}/roadmaps/37", headers: { "authorization" => @auth_token })
