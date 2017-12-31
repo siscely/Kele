@@ -1,7 +1,7 @@
 require 'httparty'
 require 'json'
 
-module RoadMap
+module Roadmap
     include HTTParty
     
     def get_roadmap
