@@ -87,3 +87,27 @@ Test Kele in IRB to ensure that:
 1.  You retrieve your own user data
 1.  You convert your user data to a Ruby hash
 
+## Mentor Availability
+As a user, I want to retrieve a list of my mentor's availability
+
+### Body
+Retrieve a list of a mentor's available time slots for the current user from the Bloc API by defining get_mentor_availability which can be used as follows:
+
+```
+$ irb
+>> require './lib/kele'
+=> true
+>> kele_client = Kele.new("jane@gmail.com", "abc123")
+>> mentor_id = 99
+>> kele_client.get_mentor_availability(mentor_id)
+```
+You will need to include the mentor id in the URL. Find your mentor's id in the user data returned by get_me. Pass auth_token to the request to properly authenticate against the Bloc API.
+
+Convert the JSON response to a Ruby array.
+
+### Test Your Code
+Test Kele in IRB to ensure that:
+
+1. You retrieve a list of your mentor's available time slots
+1. You convert your mentor's available time slots data to a Ruby array
+
