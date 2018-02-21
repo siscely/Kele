@@ -175,3 +175,19 @@ Test Kele in IRB to ensure that you can:
 1. Retrieve all messages for the current user
 1. Create a new message and thread
 
+### Checkpoint Submission
+As a user, I want to submit checkpoint assignments
+
+### Checkpoint Submissions
+Add a create_submission method that creates a new Bloc checkpoint submission on the Bloc platform. Use the create checkpoint submission endpoint to create a new submission. Checkpoint submissions are tied to your account via an enrollment_id, which is included in your user information. Implement create_submission so that it can be used as follows:
+```
+$ irb
+>> require './lib/kele'
+=> true
+>> kele_client = Kele.new("Hannah.McExample@gmail.com", "abc123")
+>> kele_client.create_submission(checkpoint_id, assignment_branch, assignment_commit_link, comment)
+```
+### Test Your Code
+Test Kele in IRB to ensure that you can:
+
+Create a new checkpoint submission
