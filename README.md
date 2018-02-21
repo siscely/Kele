@@ -111,3 +111,42 @@ Test Kele in IRB to ensure that:
 1. You retrieve a list of your mentor's available time slots
 1. You convert your mentor's available time slots data to a Ruby array
 
+## Roadmaps and Checkpoints
+As a user, I want to retrieve roadmaps and checkpoints.
+
+### Retrieving Roadmaps
+Retrieve roadmaps with their associated sections and checkpoints by defining  get_roadmap to be used as follows:
+
+```
+$ irb
+>> require './lib/kele'
+=> true
+>> kele_client = Kele.new("jane@gmail.com", "abc123")
+>> roadmap_id = 99
+>> kele_client.get_roadmap(roadmap_id)
+```
+Your roadmap id is included in the object returned from calling the get_me method defined in the "Retrieve Users" checkpoint of this project.
+
+Convert the JSON response to Ruby.
+
+### Retrieving Checkpoints
+Retrieve checkpoints with their associated body and assignment by defining  get_checkpoint to be used as follows:
+```
+$ irb
+>> require './lib/kele'
+=> true
+>> kele_client = Kele.new("jane@gmail.com", "abc123")
+>> checkpoint_id = 99
+>> kele_client.get_checkpoint(checkpoint_id)
+```
+### Retrieve checkpoint ids from the get_roadmap response.
+
+### Refactor Roadmaps and Checkpoints
+lib/kele.rb is starting to get cluttered. Clean it up by moving get_roadmap and  get_checkpoint into a separate lib/roadmap module. require the file in lib/kele.rb and include the module.
+
+### Test Your Code
+Test Kele in IRB to ensure that you can:
+
+Retrieve a roadmap and its associated sections and checkpoints
+Retrieve a checkpoint and its associated body and assignment
+Continue to use get_roadmap and get_checkpoint after moving them into a module
