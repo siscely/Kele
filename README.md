@@ -147,6 +147,31 @@ lib/kele.rb is starting to get cluttered. Clean it up by moving get_roadmap and 
 ### Test Your Code
 Test Kele in IRB to ensure that you can:
 
-Retrieve a roadmap and its associated sections and checkpoints
-Retrieve a checkpoint and its associated body and assignment
-Continue to use get_roadmap and get_checkpoint after moving them into a module
+1. Retrieve a roadmap and its associated sections and checkpoints
+1. Retrieve a checkpoint and its associated body and assignment
+1. Continue to use get_roadmap and get_checkpoint after moving them into a module
+
+## Messaging
+As a user, I want to retrieve a list of my messages, respond to an existing message, and create a new message thread
+
+### Retrieving Messages
+On the Bloc platform all messages belong to a message thread. Retrieve all message threads for the current user by defining get_messages. The all message threads endpoint returns message threads paginated with 10 threads per page and a total count of all threads. Either return the first page of messages or a specified page.
+```
+$ irb
+>> require './lib/kele'
+=> true
+>> kele_client = Kele.new("Hannah.McExample@gmail.com", "abc123")
+>> kele_client.get_messages(1) # returns the first page of message threads
+>> kele_client.get_messages # returns all message threads
+```
+Convert the JSON responses to native Ruby objects.
+
+### Creating Messages
+Add a create_message method that creates a new message on the Bloc platform. Use the create message endpoint to create a new message and thread.
+
+### Test Your Code
+Test Kele in IRB to ensure that you can:
+
+1. Retrieve all messages for the current user
+1. Create a new message and thread
+
